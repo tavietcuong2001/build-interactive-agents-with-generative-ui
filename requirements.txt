@@ -2,6 +2,7 @@ copilotkit
 fastapi
 uvicorn
 langchain-openai
+langchain-google-genai
 langgraph
 langgraph-prebuilt
 python-dotenv
