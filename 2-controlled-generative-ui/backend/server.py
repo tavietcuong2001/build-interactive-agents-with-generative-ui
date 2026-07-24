@@ -12,7 +12,7 @@ from copilotkit import CopilotKitMiddleware, LangGraphAGUIAgent
 from fastapi import FastAPI
 from langchain.agents import create_agent
 from langchain.tools import tool
-from langchain_google_genai import GoogleGenerativeAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langgraph.checkpoint.memory import MemorySaver
 
 _LESSON_ROOT = Path(__file__).resolve().parents[1]
@@ -29,7 +29,7 @@ def query_data(query: str) -> list[dict[str, Any]]:
 
 def _build_graph():
     return create_agent(
-        model=GoogleGenerativeAI(model="gemini-3.1-flash-lite"),
+        model=ChatGoogleGenerativeAI(model="gemini-3.5-flash-lite"),
         tools=[query_data],
         middleware=[CopilotKitMiddleware()],
         checkpointer=MemorySaver(),
