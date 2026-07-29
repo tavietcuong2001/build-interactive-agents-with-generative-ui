@@ -1,8 +1,7 @@
-
-import { CopilotRuntime, createCopilotEndpoint } from "@copilotkit/runtime/v2";
-import { HttpAgent } from "@ag-ui/client";
-import { LangGraphHttpAgent } from "@copilotkit/runtime/langgraph";
 import { serve } from "@hono/node-server";
+import { LangGraphHttpAgent } from "@ag-ui/langgraph";
+import { HttpAgent } from "@ag-ui/client";
+import { CopilotRuntime, createCopilotEndpoint } from "@copilotkit/runtime/v2";
 
 const langGraphAgent = new LangGraphHttpAgent({
   url: process.env.LANGGRAPH_DEPLOYMENT_URL || "http://localhost:8002",
@@ -15,7 +14,7 @@ const adkAgent = new HttpAgent({
 const runtime = new CopilotRuntime({
   agents: {
     default: langGraphAgent,
-    gemini: adkAgent,
+    gemini: adkAgent, // Đăng ký thêm agent mới
   },
 });
 

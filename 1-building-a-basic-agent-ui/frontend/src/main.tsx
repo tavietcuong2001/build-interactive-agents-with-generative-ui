@@ -1,4 +1,3 @@
-
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { CopilotKit } from "@copilotkit/react-core/v2";

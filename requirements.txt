@@ -4,7 +4,6 @@ uvicorn
 langchain-openai
 langchain-google-genai
 langgraph
-langgraph-prebuilt
 python-dotenv
 ag-ui-adk
 google-adk
