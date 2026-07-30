@@ -4,19 +4,19 @@ export const useExampleSuggestions = () => {
   useConfigureSuggestions({
     suggestions: [
       {
-        title: "Show my name",
+        title: "Hiển thị tên tôi",
         message:
-          "Please show my name in the chat.",
+          "Hiển thị tên của tôi trong đoạn chat.",
       },
       {
-        title: "Pie chart",
+        title: "Biểu đồ hình tròn",
         message:
-          "Please show me the distribution of our revenue by category in a pie chart.",
+          "Hiển thị cơ cấu doanh thu theo danh mục bằng biểu đồ tròn.",
       },
       {
-        title: "Flight card",
+        title: "Thẻ chuyến bay",
         message:
-          "Show a flight card for Pacific Air from SFO to JFK departing at 08:30 for $249.",
+          "Hiển thị thông tin chuyến bay của hãng Pacific Air từ SFO đến JFK cất cánh lúc 08:30 với giá $249.",
       },
     ],
     available: "always",

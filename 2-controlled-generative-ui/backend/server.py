@@ -21,7 +21,7 @@ CSV_PATH = _LESSON_ROOT / "db.csv"
 
 @tool
 def query_data(query: str) -> list[dict[str, Any]]:
-    """Query the lesson dataset. Always call before showing a chart or graph."""
+    """Truy vấn tập dữ liệu bài học. Luôn gọi hàm này trước khi hiển thị biểu đồ hoặc đồ thị."""
     with CSV_PATH.open(newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
         return list(reader)
@@ -34,12 +34,11 @@ def _build_graph():
         middleware=[CopilotKitMiddleware()],
         checkpointer=MemorySaver(),
         system_prompt=(
-            "You are a helpful assistant for a demo app with a few available UI tools. "
-            "When a user asks for charts based on the lesson dataset, always call query_data first to fetch all CSV rows. "
-            "Prefer using a matching frontend tool when it would present the answer clearly. "
-            "Use pieChart for category distributions "
-            "and flightCard for a single flight summary when relevant. "
-            "Tool arguments must match the provided schema exactly."
+            "Bạn là một trợ lý hữu ích cho một ứng dụng demo có sẵn một vài công cụ giao diện. "
+            "Khi người dùng yêu cầu vẽ biểu đồ dựa trên tập dữ liệu bài học, hãy luôn gọi query_data trước để lấy toàn bộ các dòng từ tệp CSV. "
+            "Ưu tiên sử dụng công cụ phía giao diện phù hợp nếu nó giúp trình bày câu trả lời một cách rõ ràng. "
+            "Sử dụng pieChart cho phân bố theo danh mục và flightCard cho tóm tắt thông tin một chuyến bay đơn lẻ khi phù hợp. "
+            "Các đối số truyền vào công cụ phải khớp chính xác với schema đã được cung cấp."
         ),
     )
 
@@ -49,8 +48,8 @@ def start_backend(port: int = 8003) -> None:
 
     app = FastAPI()
     agent = LangGraphAGUIAgent(
-        name="lesson3_charts_agent",
-        description="Lesson 3 controlled generative UI agent",
+        name="demo_agent",
+        description="Demo agent",
         graph=_build_graph(),
     )
     add_langgraph_fastapi_endpoint(app=app, agent=agent, path="/")
