@@ -1,12 +1,12 @@
 import { z } from "zod";
 
 export const FlightCardProps = z.object({
-  title: z.string().describe("Flight card title"),
-  airline: z.string().describe("Airline name"),
-  origin: z.string().describe("Departure airport/city"),
-  destination: z.string().describe("Arrival airport/city"),
-  departure_time: z.string().describe("Departure time"),
-  price: z.string().describe("Price display"),
+  title: z.string().describe("Tiêu đề thẻ chuyến bay"),
+  airline: z.string().describe("Tên hãng hàng không"),
+  origin: z.string().describe("Sân bay hoặc thành phố xuất phát"),
+  destination: z.string().describe("Sân bay hoặc thành phố điểm đến"),
+  departure_time: z.string().describe("Thời gian khởi hành"),
+  price: z.string().describe("Giá vé hiển thị"),
 });
 
 type FlightCardProps = z.infer<typeof FlightCardProps>;

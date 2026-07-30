@@ -8,8 +8,8 @@ import { z } from "zod";
 import { CHART_COLORS, CHART_CONFIG } from "@/components/config";
 
 export const PieChartProps = z.object({
-  title: z.string().describe("Chart title"),
-  description: z.string().describe("Brief description or subtitle"),
+  title: z.string().describe("Tiêu đề biểu đồ"),
+  description: z.string().describe("Mô tả ngắn hoặc phụ đề của biểu đồ"),
   data: z.array(
     z.object({
       label: z.string(),
