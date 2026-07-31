@@ -19,5 +19,5 @@ const app = createCopilotEndpoint({
 });
 
 serve({ fetch: app.fetch, port: 4004 }, () => {
-  console.log("\u2713 CopilotKit API server running at http://localhost:4004");
+  console.log("✓ CopilotKit API server running at http://localhost:4004");
 });
