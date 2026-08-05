@@ -14,7 +14,7 @@ createRoot(document.getElementById("root")!).render(
         useSingleEndpoint={false}
         runtimeUrl="/api/copilotkit"
 
-        // 🪁 Enable A2UI using the demonstration catalog
+        // 🪁 Kích hoạt A2UI và nạp danh mục vừa tạo
         a2ui={{ catalog: demonstrationCatalog }}
       >
         <App />

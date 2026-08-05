@@ -4,9 +4,9 @@ export const useExampleDynamicSuggestions = () => {
   useConfigureSuggestions({
     suggestions: [
       {
-        title: "Sales Dashboard",
+        title: "Bảng điều khiển doanh số",
         message:
-          "Show me a sales dashboard with total revenue, new customers, and conversion rate metrics. Include a pie chart of revenue by category and a bar chart of monthly sales.",
+          "Hãy hiển thị cho tôi bảng điều khiển doanh số gồm tổng doanh thu, số khách hàng mới và tỷ lệ chuyển đổi. Bao gồm biểu đồ hình tròn phân bổ doanh thu theo danh mục và biểu đồ cột về doanh số hàng tháng.",
       },
     ],
     available: "always",
@@ -18,9 +18,9 @@ export const useExampleFixedSuggestions = () => {
   useConfigureSuggestions({
     suggestions: [
       {
-        title: "Search flights",
+        title: "Tìm chuyến bay",
         message:
-          "Find flights from San Francisco (SFO) to New York (JFK) for next Friday. Show me options from different airlines.",
+          "Tìm các chuyến bay từ San Francisco (SFO) đến New York (JFK) vào thứ 6 tuần tới. Hiển thị các lựa chọn từ nhiều hãng hàng không khác nhau.",
       },
     ],
     available: "always",

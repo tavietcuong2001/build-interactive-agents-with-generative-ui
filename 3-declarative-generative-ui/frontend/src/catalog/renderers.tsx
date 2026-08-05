@@ -1,25 +1,10 @@
 
 import React from "react";
-import {
-  PieChart as RechartsPie,
-  Pie,
-  Cell,
-  ResponsiveContainer,
-  BarChart as RechartsBar,
-  Bar,
-  XAxis,
-  YAxis,
-  Tooltip,
-  CartesianGrid,
-} from "recharts";
-import {
-  createCatalog,
-  type CatalogRenderers,
-} from "@copilotkit/a2ui-renderer";
-import {
-  demonstrationCatalogDefinitions,
-  type DemonstrationCatalogDefinitions,
-} from "./definitions";
+import { PieChart as RechartsPie, Pie, Cell, ResponsiveContainer, BarChart as RechartsBar, Bar, XAxis, YAxis, Tooltip, CartesianGrid } from "recharts";
+import { createCatalog, type CatalogRenderers } from "@copilotkit/a2ui-renderer";
+import { demonstrationCatalogDefinitions, type DemonstrationCatalogDefinitions } from "./definitions";
+
+// Hàm xử lý dữ liệu động hoặc chuỗi tĩnh
 
 function resolveText(value: unknown): string {
   if (typeof value === "string") return value;
@@ -28,7 +13,7 @@ function resolveText(value: unknown): string {
   return String(value ?? "");
 }
 
-// ─── Renderers (type-checked against schema definitions) ────────────
+// Map các thành phần vào React UI
 
 const demonstrationCatalogRenderers: CatalogRenderers<DemonstrationCatalogDefinitions> =
   {
@@ -501,7 +486,7 @@ const demonstrationCatalogRenderers: CatalogRenderers<DemonstrationCatalogDefini
     },
   };
 
-// ─── Assembled Catalog ───────────────────────────────────────────────
+// Khởi tạo catalog hoàn chỉnh
 
 export const demonstrationCatalog = createCatalog(
   demonstrationCatalogDefinitions,

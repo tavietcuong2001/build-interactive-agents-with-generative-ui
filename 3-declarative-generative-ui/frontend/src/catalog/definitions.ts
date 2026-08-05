@@ -3,7 +3,7 @@ import { z } from "zod";
 
 export const demonstrationCatalogDefinitions = {
   Title: {
-    description: "A heading. Use for section titles and page headers.",
+    description: "Tiêu đề. Dùng cho tiêu đề phần và tiêu đề trang.",
     props: z.object({
       text: z.string(),
       level: z.string().optional(),
@@ -11,7 +11,7 @@ export const demonstrationCatalogDefinitions = {
   },
 
   Text: {
-    description: "A text element. Use for labels, values, captions.",
+    description: "Thẻ văn bản. Dùng cho các nhãn, giá trị, chú thích.",
     props: z.object({
       text: z.union([z.string(), z.object({ path: z.string() })]),
       variant: z.enum(["h1", "h2", "h3", "body", "caption"]).optional(),
@@ -19,7 +19,7 @@ export const demonstrationCatalogDefinitions = {
   },
 
   Icon: {
-    description: "A material icon by name.",
+    description: "Biểu tượng Material icon theo tên.",
     props: z.object({
       name: z.string(),
       size: z.number().optional(),
@@ -27,7 +27,7 @@ export const demonstrationCatalogDefinitions = {
   },
 
   Image: {
-    description: "An image element.",
+    description: "Thẻ hình ảnh.",
     props: z.object({
       src: z.union([z.string(), z.object({ path: z.string() })]),
       alt: z.union([z.string(), z.object({ path: z.string() })]).optional(),
@@ -37,19 +37,19 @@ export const demonstrationCatalogDefinitions = {
   },
 
   Divider: {
-    description: "A horizontal divider line.",
+    description: "Đường phân cách ngang.",
     props: z.object({}),
   },
 
   Card: {
-    description: "A generic card container with a child slot.",
+    description: "Thẻ chứa chung với một vị trí dành cho component con.",
     props: z.object({
       child: z.string().optional(),
     }),
   },
 
   List: {
-    description: "A list of children. Supports horizontal or vertical direction.",
+    description: "Danh sách các component con. Hỗ trợ hướng ngang hoặc dọc.",
     props: z.object({
       children: z.union([
         z.array(z.string()),
@@ -61,14 +61,14 @@ export const demonstrationCatalogDefinitions = {
   },
 
   Tabs: {
-    description: "A tabbed container. Each tab has a label and child content.",
+    description: "Thẻ chứa dạng tab. Mỗi tab có một nhãn và nội dung con.",
     props: z.object({
       tabs: z.array(z.object({ label: z.string(), child: z.string() })),
     }),
   },
 
   Row: {
-    description: "Horizontal layout container.",
+    description: "Thẻ chứa bố cục theo chiều ngang.",
     props: z.object({
       gap: z.number().optional(),
       align: z.string().optional(),
@@ -81,7 +81,7 @@ export const demonstrationCatalogDefinitions = {
   },
 
   Column: {
-    description: "Vertical layout container.",
+    description: "Thẻ chứa bố cục theo chiều dọc.",
     props: z.object({
       gap: z.number().optional(),
       align: z.string().optional(),
@@ -94,7 +94,7 @@ export const demonstrationCatalogDefinitions = {
 
   DashboardCard: {
     description:
-      "A card container with title and optional subtitle. Has a 'child' slot for content (chart, metrics, etc). Use 'child' with a single component ID.",
+      "Thẻ bảng điều khiển có tiêu đề và phụ đề tùy chọn. Có một slot 'child' chứa nội dung (biểu đồ, chỉ số, v.v.). Sử dụng 'child' với ID của một component duy nhất.",
     props: z.object({
       title: z.string(),
       subtitle: z.string().optional(),
@@ -104,7 +104,7 @@ export const demonstrationCatalogDefinitions = {
 
   Metric: {
     description:
-      "A key metric display with label, value, and optional trend indicator. Great for KPIs and stats.",
+      "Hiển thị chỉ số quan trọng gồm nhãn, giá trị và chỉ số xu hướng tùy chọn. Rất thích hợp cho KPI và số liệu thống kê.",
     props: z.object({
       label: z.string(),
       value: z.string(),
@@ -115,7 +115,7 @@ export const demonstrationCatalogDefinitions = {
 
   PieChart: {
     description:
-      "A pie/donut chart. Provide data as array of {label, value, color} objects.",
+      "Biểu đồ hình tròn/donut. Cung cấp dữ liệu dưới dạng mảng các đối tượng {label, value, color}.",
     props: z.object({
       data: z.array(
         z.object({
@@ -130,7 +130,7 @@ export const demonstrationCatalogDefinitions = {
 
   BarChart: {
     description:
-      "A bar chart. Provide data as array of {label, value} objects.",
+      "Biểu đồ cột. Cung cấp dữ liệu dưới dạng mảng các đối tượng {label, value}.",
     props: z.object({
       data: z.array(z.object({ label: z.string(), value: z.number() })),
       color: z.string().optional(),
@@ -139,7 +139,7 @@ export const demonstrationCatalogDefinitions = {
 
   Badge: {
     description:
-      "A small status badge/tag. Use for labels, statuses, categories.",
+      "Huy hiệu/thẻ trạng thái nhỏ. Dùng cho nhãn, trạng thái, danh mục.",
     props: z.object({
       text: z.string(),
       variant: z
@@ -149,7 +149,7 @@ export const demonstrationCatalogDefinitions = {
   },
 
   DataTable: {
-    description: "A data table with columns and rows.",
+    description: "Bảng dữ liệu gồm các cột và dòng.",
     props: z.object({
       columns: z.array(z.object({ key: z.string(), label: z.string() })),
       rows: z.array(z.record(z.any())),
@@ -158,13 +158,13 @@ export const demonstrationCatalogDefinitions = {
 
   Button: {
     description:
-      "An interactive button. Use 'label' for simple text or 'child' for a child component. 'action' is dispatched on click.",
+      "Nút tương tác. Sử dụng 'label' cho văn bản đơn giản hoặc 'child' cho component con. 'action' sẽ được gửi đi khi nhấp vào.",
     props: z.object({
       label: z.string().optional(),
       child: z
         .string()
         .describe(
-          "The ID of the child component (e.g. a Text component for the label).",
+          "ID của component con (ví dụ: một Text component làm nhãn).",
         )
         .optional(),
       variant: z.enum(["primary", "secondary", "ghost"]).optional(),
@@ -183,6 +183,5 @@ export const demonstrationCatalogDefinitions = {
   },
 };
 
-/** Type helper for renderers */
-export type DemonstrationCatalogDefinitions =
-  typeof demonstrationCatalogDefinitions;
+/** Hỗ trợ kiểu dữ liệu (type helper) cho các renderer */
+export type DemonstrationCatalogDefinitions = typeof demonstrationCatalogDefinitions;
